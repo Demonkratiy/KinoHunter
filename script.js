@@ -25,8 +25,9 @@ function requestApi(method, url){
 
     output.results.forEach(function (item){
       let nameItem = item.name || item.title;
+      let dateItem = item.first_air_date || item.release_date;
       //inner += '<div class="col-5">' + nameItem + '</div>';
-      inner += `<div class="col-15 col-md-4 col-xl-3">${nameItem};&#8194</div>`;
+      inner += `<div class="col-15 col-md-4 col-xl-3">${nameItem}&#8194-&#8194${dateItem}</div>`;
     });
     movie.innerHTML = inner;
     console.log(output);
